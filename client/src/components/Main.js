@@ -46,8 +46,6 @@ const Go = styled.p`
   color: green;
 `;
 
-const SpotifyLogo = styled.div`
-  display: flex;
-`;
+
 
 export default Main;

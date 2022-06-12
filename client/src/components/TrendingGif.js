@@ -6,11 +6,11 @@ const TrendingGif = () => {
   const { gif } = useContext(AppContext);
   console.log(gif);
 
-  return ((gif !== null) ? <Container>
+  return ((gif) ? <Container>
      {gif.map((giff) => {
          return (
              <Wrapper>
-                 <iframe src={giff.embed_url} frameBorder="0" ></iframe>
+                 <iframe src={giff.embed_url} width="300rem" height="300rem" frameBorder="0" ></iframe>
              </Wrapper>
             
          )
@@ -26,14 +26,32 @@ const Container = styled.div`
     background-color: inherit;
     flex-wrap: wrap;
     justify-content: center;
+
 `;
 
 const Wrapper = styled.div`
-    display: flex;
-    background-color: inherit;
-    flex-direction: column;
-    height: 10rem;
-    width: 10rem;
+  display: flex;
+  background-color: inherit;
+  flex-direction: column;
+  height: 20rem;
+  width: 20rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+
+  background: gray;
+  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+  color: white;
+  box-shadow: 20px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+
+  &:hover {
+      transform: scale(1.1);
+    }  
+
+  iframe {
+    object-fit: fill;
+  }
 `;
 
 
